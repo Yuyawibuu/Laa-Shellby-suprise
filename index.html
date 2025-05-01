@@ -73,7 +73,6 @@ header h1 {
     font-size: 24px;
     text-align: center;
   }
-}
 	
 	  	body{
 	  		overflow: hidden;
@@ -524,7 +523,17 @@ header h1 {
 			</div>
 		</div>
 		<span style="position: absolute; text-align: center; line-height: 100vh; width: 100vw; z-index:-10;">Jangan dijual 😡</span>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+					// Deteksi apakah pengguna memakai HP
+let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+// Ubah isi teks berdasarkan perangkat
+const pesan = document.getElementById("pesan");
+if (isMobile) {
+  pesan.innerText = "Anda membuka dari perangkat HP/Tablet.";
+} else {
+  pesan.innerText = "Anda membuka dari perangkat PC/Laptop.";
+}</script>
 	  	<script type="text/javascript">
 	  		/*
 
@@ -937,16 +946,6 @@ header h1 {
 				x.pause();
 				x.currentTime = 0;
 			}
-			// Deteksi apakah pengguna memakai HP
-let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-// Ubah isi teks berdasarkan perangkat
-const pesan = document.getElementById("pesan");
-if (isMobile) {
-  pesan.innerText = "Anda membuka dari perangkat HP/Tablet.";
-} else {
-  pesan.innerText = "Anda membuka dari perangkat PC/Laptop.";
-}
 
 	  	</script>
 	</body>
