@@ -13,66 +13,6 @@
 	  	<link rel="icon" href="https://gamepedia.cursecdn.com/minecraft_gamepedia/a/a7/Heart.svg?version=dac1a46352ab4c25ad78a3cef0ceea86">
 	  	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	  	<style type="text/css">
-/** Regular */
-@font-face {
-  font-family: "SF Display";
-  font-weight: 400;
-  src: url("https://sf.abarba.me/SF-UI-Display-Regular.otf");
-}
-/** Semibold */
-@font-face {
-  font-family: "SF Display";
-  font-weight: 600;
-  src: url("https://sf.abarba.me/SF-UI-Display-Semibold.otf");
-}
-
-/** Thin */
-@font-face {
-  font-family: "SF Display";
-  font-weight: 300;
-  src: url("https://sf.abarba.me/SF-UI-Display-Thin.otf");
-}
-/** Bold */
-@font-face {
-  font-family: "SF Display";
-  font-weight: 700;
-  src: url("https://sf.abarba.me/SF-UI-Display-Bold.otf");
-}
-	  	*{
-	  		font-family: SF Display;
-	  		cursor: default;
-			-webkit-user-select: none;
-			-khtml-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			-o-user-select: none;
-			user-select: none;
-	  	}
-		/* Tampilan default untuk desktop */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f8ff;
-  margin: 40px;
-  font-size: 18px;
-}
-
-header h1 {
-  font-size: 36px;
-  color: #333;
-}
-
-/* Tampilan untuk HP / Tablet */
-@media (max-width: 768px) {
-  body {
-    background-color: #ffffff;
-    margin: 20px;
-    font-size: 16px;
-  }
-
-  header h1 {
-    font-size: 24px;
-    text-align: center;
-  }
 	
 	  	body{
 	  		overflow: hidden;
@@ -523,17 +463,7 @@ header h1 {
 			</div>
 		</div>
 		<span style="position: absolute; text-align: center; line-height: 100vh; width: 100vw; z-index:-10;">Jangan dijual 😡</span>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
-					// Deteksi apakah pengguna memakai HP
-let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-// Ubah isi teks berdasarkan perangkat
-const pesan = document.getElementById("pesan");
-if (isMobile) {
-  pesan.innerText = "Anda membuka dari perangkat HP/Tablet.";
-} else {
-  pesan.innerText = "Anda membuka dari perangkat PC/Laptop.";
-}</script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	  	<script type="text/javascript">
 	  		/*
 
