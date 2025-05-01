@@ -67,13 +67,17 @@
 	  	.mywindow{
 	  		background: #ECECEC;
 	  		position: absolute;
-	  		left: calc(50% - 250px);
-	  		top: calc(50% - 120px);
+	  		left: 50%;
+	  		top: 50%;
+	  		transform: translate(-50%, -50%);
 	  		font-size: 12pt;
 	  		border-radius: 10px;
 	  		border: 1px solid #C6C6C6;
 	  		box-shadow: 0px 0px 10px #00000020;
-	  		
+	  		width: 90%;
+	  		max-width: 500px;
+	  		max-height: 80vh;
+	  		overflow-y: auto;
 	  	}
 	  	.myanimated{
 	  		transition: all ease 0.3s;
@@ -129,8 +133,8 @@
 	  		background: #4BBA54;
 	  	}
 	  	.mybody{
-	  		padding: 30px;
-	  		padding-bottom: 100px;
+	  		padding: 20px;
+	  		padding-bottom: 80px;
 	  	}
 	  	.mytitle{
 	  		font-weight: bold;
@@ -141,10 +145,11 @@
 
 	  	}
 	  	.mytext{
-	  		width: 350px;
+	  		width: 100%;
+	  		max-width: 350px;
 			border-radius: 7px;
-			padding: 5px;
-			margin-left: 10px;
+			padding: 8px;
+			margin: 5px 0;
 			box-sizing: border-box;
 			border: 3px solid #dcdcdca0;
 			-webkit-transition: 0.3s;
@@ -162,8 +167,8 @@
 	  		position: absolute;
 	  		height: 30px;
 	  		line-height: 30px;
-	  		bottom: 20px;
-	  		right: 20px;
+	  		bottom: 15px;
+	  		right: 15px;
 	  	}
 	  	.mybuttonyes, .mybuttonno{
 	  		display: inline-block;
@@ -225,8 +230,11 @@
 			opacity: 1;
 	  	}
 	  	.divvideo{
-			width: 688px;
-			height: 576px;
+			width: 90%;
+			max-width: 688px;
+			height: auto;
+			max-height: 80vh;
+			aspect-ratio: 16/9;
 			border-radius: 20px;
 			overflow: hidden;
 			position: relative;
@@ -256,28 +264,30 @@
 	  	}
 	  	.jam{
 	  		position: relative;
-	  		font-size: 100px;
+	  		font-size: 15vw;
 	  		font-weight: 300;
 	  	}
 	  	.tanggal{
 	  		position: relative;
-	  		font-size: 20px;
+	  		font-size: 4vw;
 	  		margin-top: 15px;
 	  	}
 	  	.ucapan{
 	  		position: relative;
 	  		color: #000000;
-	  		font-size: 20px;
+	  		font-size: 4vw;
 	  		margin-top: 50px;
 	  		background: #EAEAEA90;
-	  		left: calc(50% - 220px - 20px);
-	  		width: 440px;
-	  		padding: 30px 20px;
+	  		left: 50%;
+	  		transform: translateX(-50%);
+	  		width: 90%;
+	  		max-width: 480px;
+	  		padding: 20px;
 	  		border-radius: 25px;
 	  		transition: all ease 0.3s;
 	  	}
 	  	.ucapan:active{
-	  		transform: scale(1.02);
+	  		transform: translateX(-50%) scale(1.02);
 	  	}
 	  	.ucapan:hover, .ucapan *:hover{
 	  		cursor: pointer;
@@ -384,6 +394,24 @@
 	  	.kanan{
 	  		right: 0;
 	  	}
+	  	
+	  	/* Media Queries for Mobile */
+	  	@media (min-width: 768px) {
+	  	    .jam {
+	  	        font-size: 100px;
+	  	    }
+	  	    .tanggal {
+	  	        font-size: 20px;
+	  	    }
+	  	    .ucapan {
+	  	        font-size: 20px;
+	  	        width: 480px;
+	  	        padding: 30px 20px;
+	  	    }
+	  	    .mywindow {
+	  	        height: 240px;
+	  	    }
+	  	}
 	  </style>
 	</head>
 	<body onload="init()">
@@ -420,7 +448,7 @@
 				<div class="shortcut kanan" onclick="toggleFullscreen()">Fullscreen</div>
 				<div class="shortcut kiri" onclick="wpblur()">Blur</div>
 			</div>
-			<div class="mywindow" id="myform" style="width: 500px; height: 240px">
+			<div class="mywindow" id="myform" style="height: 240px">
 				<div class="myheader">
 					Registrasi
 				</div>
@@ -438,7 +466,7 @@
 					</div>
 				</div>	
 			</div>
-			<div class="mywindow myanimated myhide" id="mywindow" style="width: 500px; height: 240px">
+			<div class="mywindow myanimated myhide" id="mywindow" style="height: 240px">
 				<div class="mycontrol">
 					<div class="myclose" onclick="reverse()"></div>
 					<div class="mymini"></div>
@@ -705,7 +733,7 @@
 					selesai=false;
 					$('.ucapan').text('');
 					$('.ucapan *').remove();
-					$(".ucapan").append("<input type='text' id='textcari' style='background:#00000000; width:300px; transform:translateX(-70px); color:#000; outline: none; box-sizing:border-box; border: 0px solid #000; font-size:20px' placeholder='Cari di sini' autofocus></input><span class='tombolcari'; style='transition: all ease 0.3s; border-radius:10px; width:60px; height:50px; top:calc(50% - 25px); right:90px; line-height:50px; position:absolute;' onclick='cariok()'>Cari</span><span class='tombolcari'; style='transition: all ease 0.3s; border-radius:10px; width:60px; height:50px; top:calc(50% - 25px); right:20px; line-height:50px; position:absolute;' onclick='caribatal()'>Batal</span>");
+					$(".ucapan").append("<input type='text' id='textcari' style='background:#00000000; width:80%; max-width:300px; color:#000; outline: none; box-sizing:border-box; border: 0px solid #000; font-size:inherit' placeholder='Cari di sini' autofocus></input><span class='tombolcari'; style='transition: all ease 0.3s; border-radius:10px; width:60px; height:50px; top:calc(50% - 25px); right:90px; line-height:50px; position:absolute;' onclick='cariok()'>Cari</span><span class='tombolcari'; style='transition: all ease 0.3s; border-radius:10px; width:60px; height:50px; top:calc(50% - 25px); right:20px; line-height:50px; position:absolute;' onclick='caribatal()'>Batal</span>");
 					document.querySelector('#textcari').addEventListener('keyup', function (e) {
 					    if (e.key === 'Enter') {
 				      		cariok();
