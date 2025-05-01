@@ -48,6 +48,33 @@
 			-o-user-select: none;
 			user-select: none;
 	  	}
+		/* Tampilan default untuk desktop */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 40px;
+  font-size: 18px;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+/* Tampilan untuk HP / Tablet */
+@media (max-width: 768px) {
+  body {
+    background-color: #ffffff;
+    margin: 20px;
+    font-size: 16px;
+  }
+
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+}
+	
 	  	body{
 	  		overflow: hidden;
 	  		background-image: url();
@@ -910,6 +937,17 @@
 				x.pause();
 				x.currentTime = 0;
 			}
+			// Deteksi apakah pengguna memakai HP
+let isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+// Ubah isi teks berdasarkan perangkat
+const pesan = document.getElementById("pesan");
+if (isMobile) {
+  pesan.innerText = "Anda membuka dari perangkat HP/Tablet.";
+} else {
+  pesan.innerText = "Anda membuka dari perangkat PC/Laptop.";
+}
+
 	  	</script>
 	</body>
 </html>
